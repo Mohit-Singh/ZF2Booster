@@ -1,0 +1,27 @@
+{
+   "name": "MohitOssCube/ZF2Booster",
+   "description": "This simple module to setup 2 different Caching mechanizm in ZF2 to speed up the performance of your website.",
+   "type": "library",
+   "keywords": [
+       "zf2",
+       "Cache",
+       "Booster",
+       "Zend Cache",
+       "ZF2 cache"
+   ],
+   "homepage": "https://github.com/MohitOssCube/ZF2Booster",
+   "authors": [
+       {
+           "name": "Mohit K Singh",
+           "email": "mohit.singh2090@gmail.com",
+       }
+   ],
+   "require": {
+       "php": ">=5.3"
+   },
+   "autoload": {
+       "classmap": [
+           "./Module.php"
+       ]
+   }
+}
