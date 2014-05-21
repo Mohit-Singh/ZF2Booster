@@ -1,13 +1,13 @@
 ZF2Booster
 ==========
 
-This simple module to setup 2 different Caching mechanizm in ZF2 to speed up the performance of your website.
+This is a simple module to setup 2 different Caching mechanizm in ZF2 to speed up the performance of your website.
 
 First : filesystem
 
 for this create a folder cache.
 
-```php
+```
 
 > mkdir data/cache
 
@@ -15,7 +15,7 @@ for this create a folder cache.
 
 Now give permission 0777 to cache folder.
 
-```php
+```
 
 > sudo chmod -R 0777 data/cache
 
@@ -27,7 +27,7 @@ Settings of filesystem cache:
 
 ```php
 
-ZF2Booster/config/booster.config.php
+//ZF2Booster/config/booster.config.php
 
 'fileCache' => array(
                     'cache_dir' => './data/cache',
@@ -44,7 +44,7 @@ These are the default filesystem cache settings.
 Use:
 
 ```php
-ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
+//ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 
 // store item in filesystem cache
         $this->getServiceLocator()->get('Zend\Cache\Storage\Filesystem')->setItem('foo', 'taxi');
@@ -55,7 +55,7 @@ ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 This is how you can store items in the filesystem cache.
 
 ```php
-ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
+//ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 
  // get item in filesystem cache
         echo 'Cached Item is:- '.$this->getServiceLocator()->get('Zend\Cache\Storage\Filesystem')->getItem('foo');
@@ -71,7 +71,7 @@ This is a distributed memory object caching system
 
 to use this cache you have to install PHP ext/memcached extension. 
 
-```php
+```
 
 > sudo apt-get update
 > sudo apt-get install memcached
@@ -85,7 +85,7 @@ That's it now you can use memcached
 Settings:
 
 ```php
-ZF2Booster/config/booster.config.php
+//ZF2Booster/config/booster.config.php
 
     'memcached' => array(
     	           'lifetime' => 7200,
@@ -111,7 +111,7 @@ Use:
 
 
 ```php
-ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
+//ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 
 // store item in memcached cache
         $this->getServiceLocator()->get('Zend\Cache\Storage\Memcached')->setItem('foo', 'taxi');
@@ -122,7 +122,7 @@ ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 This is how you can store items in the memcached.
 
 ```php
-ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
+//ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 
  // get item in memcached cache
         echo 'Cached Item is:- '.$this->getServiceLocator()->get('Zend\Cache\Storage\Memcached')->getItem('foo');
@@ -133,16 +133,8 @@ ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 This how you can get the items.
 
 
+Final note:-
 
+I have created these two cache service so that you can use them throught the application. for more information visit 
 
-
-
-
-
-
-
-
-
-
-
-
+http://framework.zend.com/manual/2.0/en/modules/zend.cache.storage.adapter.html
