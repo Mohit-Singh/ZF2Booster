@@ -57,7 +57,7 @@ This is how you can store items in the filesystem cache.
 ```php
 //ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 
- // get item in filesystem cache
+ // get item from filesystem cache
         echo 'Cached Item is:- '.$this->getServiceLocator()->get('Zend\Cache\Storage\Filesystem')->getItem('foo');
         
 
@@ -124,7 +124,7 @@ This is how you can store items in the memcached.
 ```php
 //ZF2Booster/src/ZF2Booster/Controller/ZF2BoosterController.php
 
- // get item in memcached cache
+ // get item from memcached cache
         echo 'Cached Item is:- '.$this->getServiceLocator()->get('Zend\Cache\Storage\Memcached')->getItem('foo');
         
 
