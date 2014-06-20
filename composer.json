@@ -1,5 +1,5 @@
 {
-   "name": "mohit-mingh/zf2booster",
+   "name": "mohit-singh/zf2booster",
    "description": "This is a simple module to setup 2 different Caching mechanizm in ZF2 to speed up the performance of your website.",
    "type": "library",
    "keywords": [
