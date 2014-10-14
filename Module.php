@@ -25,8 +25,7 @@ class Module
         return array(
             'factories' => array(
                 // global service for filesystem cache.
-                'Zend\Cache\Storage\Filesystem' => function ($sm)
-                {
+                'Zend\Cache\Storage\Filesystem' => function ($sm){
                     $config = $sm->get('config');
                     $fileCache = $config['fileCache'];
                     $cache = \Zend\Cache\StorageFactory::factory(
@@ -38,14 +37,14 @@ class Module
                                 ),
                                 'serializer'
                             )
-                        ));
+                        )
+                    );
                     $cache->setOptions($fileCache);
                     
                     return $cache;
                 },
                 // Global service for memcached cache
-                'Zend\Cache\Storage\Memcached' => function ($sm)
-                {
+                'Zend\Cache\Storage\Memcached' => function ($sm){
                     $config = $sm->get('config');
                     $memOption = $config['memcached'];
                     $cache = \Zend\Cache\StorageFactory::factory(
@@ -60,7 +59,8 @@ class Module
                                     'throw_exceptions' => false
                                 )
                             )
-                        ));
+                        )
+                     );
                     return $cache;
                 }
             )
